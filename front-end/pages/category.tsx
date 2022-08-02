@@ -1,9 +1,10 @@
-const category = () => {
+import * as React from "react";
+import Button from "@mui/material/Button";
+
+export default function Category() {
   return (
     <>
-      <h1>All categories page</h1>
+      <Button variant="contained">Hello</Button>
     </>
   );
-};
-
-export default category;
+}
