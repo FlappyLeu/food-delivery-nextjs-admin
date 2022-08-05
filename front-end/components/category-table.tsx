@@ -6,13 +6,15 @@ import TableContainer from "@mui/material/TableContainer";
 import Container from "@mui/material/Container";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import AddIcon from "@mui/icons-material/Add";
 import IconButton from "@mui/material/IconButton";
-import Fingerprint from "@mui/icons-material/Fingerprint";
+import Edit from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Paper from "@mui/material/Paper";
 import { useState } from "react";
 import axios from "axios";
 import { Button } from "@mui/material";
+import { Add, FoodBank } from "@mui/icons-material";
 
 export default function BasicTable() {
   const [categories, setCategories] = useState<any>([]);
@@ -46,8 +48,8 @@ export default function BasicTable() {
                 <TableCell align="left">{category.name}</TableCell>
                 <TableCell align="left">{category.color}</TableCell>
                 <TableCell align="left" color="blue">
-                  <IconButton aria-label="fingerprint" color="primary">
-                    <Fingerprint />
+                  <IconButton aria-label="edit" color="primary">
+                    <Edit />
                   </IconButton>
                 </TableCell>
                 <TableCell align="left" color="red">
@@ -67,6 +69,18 @@ export default function BasicTable() {
           </TableBody>
         </Table>
       </TableContainer>
+      <Button
+        variant="contained"
+        startIcon={<AddIcon />}
+        color="primary"
+        onClick={() => {
+          axios.post("http://localhost:3001/add/foods", {
+            data: Add,
+          });
+        }}
+      >
+        Add food
+      </Button>
     </Container>
   );
 }
