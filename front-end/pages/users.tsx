@@ -1,10 +1,10 @@
 import * as React from "react";
 import axios from "axios";
-import CustomPaginationActionsTable from "../components/users-table";
+import BasicTable from "../components/users-table";
 
 export default function Users({ users }: any) {
   console.log(users);
-  return <CustomPaginationActionsTable />;
+  return <BasicTable />;
 }
 
 Users.getInitialProps = async (ctx: any) => {

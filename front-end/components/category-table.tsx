@@ -79,7 +79,7 @@ export default function BasicTable() {
           });
         }}
       >
-        Add food
+        Add category
       </Button>
     </Container>
   );
