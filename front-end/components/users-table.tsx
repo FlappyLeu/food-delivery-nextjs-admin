@@ -17,7 +17,7 @@ import { Button } from "@mui/material";
 import { Add, FoodBank } from "@mui/icons-material";
 
 export default function BasicTable() {
-  const [user, setUser] = useState<any>([]);
+  const [users, setUser] = useState<any>([]);
 
   React.useEffect(() => {
     axios.get("http://localhost:3001/users").then((res) => {
@@ -43,18 +43,18 @@ export default function BasicTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {user.map((category: any) => (
+            {users.map((category: any) => (
               <TableRow
-                key={user.id}
+                key={users.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell align="left">{user.id}</TableCell>
-                <TableCell align="left">{user.phoneNumber}</TableCell>
-                <TableCell align="left">{user.address}</TableCell>
-                <TableCell align="left">{user.firstName}</TableCell>
-                <TableCell align="left">{user.age}</TableCell>
-                <TableCell align="left">{user.register}</TableCell>
-                <TableCell align="left">{user.roleId}</TableCell>
+                <TableCell align="left">{users.id}</TableCell>
+                <TableCell align="left">{users.phoneNumber}</TableCell>
+                <TableCell align="left">{users.address}</TableCell>
+                <TableCell align="left">{users.firstName}</TableCell>
+                <TableCell align="left">{users.age}</TableCell>
+                <TableCell align="left">{users.register}</TableCell>
+                <TableCell align="left">{users.roleId}</TableCell>
                 <TableCell align="left" color="blue">
                   <IconButton aria-label="edit" color="primary">
                     <Edit />
@@ -82,7 +82,7 @@ export default function BasicTable() {
         startIcon={<AddIcon />}
         color="primary"
         onClick={() => {
-          axios.post("http://localhost:3001/add-user", {
+          axios.post("http://localhost:3001/update-user", {
             data: Add,
           });
         }}
