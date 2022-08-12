@@ -16,7 +16,7 @@ import axios from "axios";
 import { Button } from "@mui/material";
 import { Add, FoodBank } from "@mui/icons-material";
 
-export default function userTable() {
+export default function BasicTable() {
   const [user, setUser] = useState<any>([]);
 
   React.useEffect(() => {
@@ -60,7 +60,7 @@ export default function userTable() {
                     <Edit />
                   </IconButton>
                 </TableCell>
-                <TableCell align="left" color="red">
+                <TableCell align="center" color="red">
                   <Button
                     variant="contained"
                     color="error"
